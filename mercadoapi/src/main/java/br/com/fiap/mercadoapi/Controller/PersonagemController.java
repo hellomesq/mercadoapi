@@ -2,8 +2,6 @@ package br.com.fiap.mercadoapi.Controller;
 
 
 import java.util.List;
-import java.util.Locale.Category;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -38,7 +36,7 @@ public class PersonagemController {
 
     @PostMapping
     public ResponseEntity<Personagem>create(@Valid @RequestBody Personagem personagem ){
-        log.info("Cadastrando personagem" + personagem.getNome());
+        //log.info("Cadastrando personagem" + personagem.getNome());
         personagemRepository.save(personagem);
         return ResponseEntity.status(201).body(personagem);
     } 
