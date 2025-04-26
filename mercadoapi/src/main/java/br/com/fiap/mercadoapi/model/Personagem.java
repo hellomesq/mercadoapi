@@ -2,6 +2,8 @@ package br.com.fiap.mercadoapi.model;
 
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -18,6 +20,7 @@ public class Personagem {
     @NotBlank(message= "O nome é obrigatório")
     private String nome;
 
+    @Enumerated(EnumType.STRING)
     @NotBlank(message= "A classe é obrigatória")
     private Classe classe;
 
@@ -29,8 +32,6 @@ public class Personagem {
 
     public Personagem() {
     }
-
-    //getter e setter
 
     public Long getId() {
         return id;
