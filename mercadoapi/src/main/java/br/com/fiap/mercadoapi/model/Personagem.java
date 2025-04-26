@@ -9,6 +9,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 @Entity 
 public class Personagem {
@@ -21,7 +22,7 @@ public class Personagem {
     private String nome;
 
     @Enumerated(EnumType.STRING)
-    @NotBlank(message= "A classe é obrigatória")
+    @NotNull(message= "A classe é obrigatória")
     private Classe classe;
 
     @Min(value=1, message= "Nível minímo é 1")

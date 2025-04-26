@@ -23,7 +23,6 @@ public class PersonagemController {
     @Autowired
     private PersonagemRepository repository;
 
-    // Método para listar personagens com filtros
     @GetMapping
     public List<Personagem> listarPersonagens(
             @RequestParam(required = false) String nome,
@@ -33,7 +32,6 @@ public class PersonagemController {
         return repository.findAll(spec);
     }
 
-    // Método para listar todos os personagens (sem filtros)
     @GetMapping("/todos")
     public List<Personagem> listarTodos() {
         return repository.findAll();
