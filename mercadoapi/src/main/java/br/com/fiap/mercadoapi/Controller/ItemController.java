@@ -23,7 +23,8 @@ public class ItemController {
     @Autowired
     private ItemRepository repository;
 
-      @GetMapping
+    // Método para listar itens com filtros
+    @GetMapping
     public List<Item> listarItens(
             @RequestParam(required = false) String nome,
             @RequestParam(required = false) String tipo,
@@ -35,7 +36,8 @@ public class ItemController {
         return repository.findAll(spec);
     }
 
-    @GetMapping
+    // Método para listar todos os itens (sem filtros)
+    @GetMapping("/todos")
     public List<Item> listarTodos() {
         return repository.findAll();
     }
